@@ -23,23 +23,25 @@ import SignIn from './src/screens/SignIn';
 import SignUp from './src/screens/SignUp';
 import BottomTab from './src/navigation/BottomTab';
 import AddLinks from './src/screens/AddLinks';
+import DoctorDetails from './src/screens/DoctorDetails';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-      <NavigationContainer>
-        {
-          <Stack.Navigator initialRouteName="BottomTab">
-            <Stack.Screen
-              name="BottomTab"
-              component={BottomTab}
-              options={{header: () => null}}
-            />
-            {/* <Stack.Screen
-              name="Opening"
-              component={OpeningScreen}
-              options={{header: () => null}}
-            />
+    <NavigationContainer>
+      {
+        <Stack.Navigator initialRouteName="BottomTab">
+          <Stack.Screen
+            name="BottomTab"
+            component={BottomTab}
+            options={{header: () => null}}
+          />
+          <Stack.Screen
+            name="DoctorDetails"
+            component={DoctorDetails}
+            options={{header: () => null}}
+          />
+          {/* 
             <Stack.Screen
               name="SignIn"
               component={SignIn}
@@ -55,9 +57,9 @@ const App = () => {
               component={AddLinks}
               options={{header: () => null}}
             /> */}
-          </Stack.Navigator>
-        }
-      </NavigationContainer>
+        </Stack.Navigator>
+      }
+    </NavigationContainer>
   );
 };
 

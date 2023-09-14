@@ -22,13 +22,13 @@ const FullButton: React.FC<Props> = (props: Props) => {
       onPress={props.onPress}
       style={[
         {
-          width: wp(92),
+          width: wp(84),
           // height:2,
-          paddingVertical: hp(1.6),
+          paddingVertical: hp(1.2),
           alignItems: 'center',
-          backgroundColor: props.disable ? '#BBBBBB' : '#1B1B1B',
-          borderRadius: 30,
-          // marginTop: hp(4),
+          backgroundColor: props.disable ? '#BBBBBB' : '#5390ED',
+          borderRadius: 8,
+          marginTop: hp(2),
         },
         props?.buttonStyle,
       ]}>

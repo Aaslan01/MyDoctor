@@ -3,9 +3,16 @@ import React from 'react';
 import Box from '../src/assets/svgs/Box';
 import StyleGuide from '../constants/StyleGuide';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import Location from '../src/assets/svgs/Location';
+import PersonBeat from '../src/assets/svgs/PersonBeat';
+import LocationB from '../src/assets/svgs/LocationB';
+import BoxBack from '../src/assets/svgs/BoxBack';
 
 const DoctorAmenities = () => {
-  function SmallContainer() {
+  function SmallContainer(
+    header: string | undefined,
+    text: string | undefined,
+  ) {
     return (
       <View
         style={[
@@ -16,21 +23,26 @@ const DoctorAmenities = () => {
           },
         ]}>
         <View
-          style={{
-            backgroundColor: '#5492FD30',
-            height: 44,
-            width: 44,
-            borderRadius: 12,
-          }}></View>
+          style={[
+            StyleGuide.center,
+            {
+              backgroundColor: '#5492FD30',
+              height: 44,
+              width: 44,
+              borderRadius: 12,
+            },
+          ]}>
+          {header?.includes('L') ? <LocationB /> : <PersonBeat />}
+        </View>
         <View style={[StyleGuide.flex1, StyleGuide.ml10]}>
           <Text
             style={[
               StyleGuide.regular12,
-              {                
+              {
                 fontWeight: '700',
               },
             ]}>
-            WorkPlace
+            {header}
           </Text>
           <Text
             style={[
@@ -39,7 +51,7 @@ const DoctorAmenities = () => {
                 color: StyleGuide.colors.text,
               },
             ]}>
-            Yarmuk Hospital Baghdad iraq
+            {text}
           </Text>
         </View>
       </View>
@@ -56,7 +68,7 @@ const DoctorAmenities = () => {
             width: wp(40),
           },
         ]}>
-        <Image source={require('../src/assets/images/BoxBack.png')} />
+        <BoxBack />
         <View style={[StyleGuide.flex1, StyleGuide.ml10]}>
           <Text
             style={[
@@ -78,8 +90,8 @@ const DoctorAmenities = () => {
           </Text>
         </View>
       </View>
-      {SmallContainer()}
-      {SmallContainer()}
+      {SmallContainer('Location', 'Al Mansour Baghdad, Iraq')}
+      {SmallContainer('Patients', '20')}
     </View>
   );
 };

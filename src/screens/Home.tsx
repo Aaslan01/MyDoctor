@@ -25,12 +25,15 @@ const Home = (props: any) => {
   return (
     <SafeAreaView style={StyleGuide.fullBackground}>
       <Header title={'ContactMe'} />
-      <View
+      <ScrollView
         style={{
           paddingHorizontal: 16,
         }}>
         <DoctorContainer />
-      </View>
+        <DoctorContainer />
+        <DoctorContainer />
+        <DoctorContainer />
+      </ScrollView>
     </SafeAreaView>
   );
 };

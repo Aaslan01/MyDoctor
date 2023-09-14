@@ -1,19 +1,35 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
 import StyleGuide from '../constants/StyleGuide';
+import ColorStatus from '../src/assets/svgs/ColorStatus';
 
 interface DoctorInformationProps {}
 
 const DoctorInformation = () => {
   return (
     <View style={[StyleGuide.fdr]}>
-      <Image
+      <View
         style={{
           height: 80,
           width: 80,
-        }}
-        source={require('../src/assets/images/Doctor.png')}
-      />
+        }}>
+        <Image
+          style={{
+            height: 80,
+            width: 80,
+            resizeMode: 'contain',
+          }}
+          source={require('../src/assets/images/Doctor.png')}
+        />
+        <View
+          style={{
+            position: 'absolute',
+            right: -5,
+            top: -5,
+          }}>
+          <ColorStatus />
+        </View>
+      </View>
       <View style={[StyleGuide.ml10, StyleGuide.mt2]}>
         <Text
           style={[

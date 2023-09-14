@@ -33,7 +33,7 @@ const StyleGuide = {
     grey3: '#F2F2F2',
     white: '#FFFFFF',
   },
-  mainBackground: {backgroundColor: '#F2F2F2'},
+  mainBackground: {backgroundColor: '#FBFBFB'},
   colorBackground: {backgroundColor: '#fff'},
   secondBackground: {backgroundColor: '#ECECEC'},
   colorWhite: {
@@ -177,7 +177,7 @@ const StyleGuide = {
   },
   regular12: {
     fontSize: 12,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: 'Urbanist-Regular',
     color: '#5492FD',
   },
   regular10: {
@@ -400,6 +400,7 @@ const StyleGuide = {
   mh45: {marginHorizontal: 45},
   // marginHorizontal
   // marginVertical
+  mv2: {marginVertical: 2},
   mv5: {marginVertical: 5},
   mv8: {marginVertical: 8},
   mv10: {marginVertical: 10},
