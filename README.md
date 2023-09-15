@@ -1,7 +1,5 @@
-![Demo](src/assets/images/demo1.png)
-![Demo](src/assets/images/demo2.png)
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
-
+Demo Images Added  Below------
 # Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
@@ -20,6 +18,9 @@ npm start
 yarn start
 ```
 
+Demo Images ------
+![Demo](src/assets/images/demo1.png)
+![Demo](src/assets/images/demo2.png)
 ## Step 2: Start your Application
 
 Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
