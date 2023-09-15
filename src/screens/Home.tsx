@@ -23,6 +23,7 @@ const Home = (props: any) => {
     <SafeAreaView style={[StyleGuide.fullBackground]}>
       <Header title={'Find Doctors'} />
       <ScrollView
+      showsVerticalScrollIndicator={false}
         style={{
           paddingHorizontal: 16,
           flex:1,
