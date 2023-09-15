@@ -119,9 +119,9 @@ const StyleGuide = {
     color: '#5492FD',
   },
   bottomNavText: {
-    fontSize: hp(1.6),
+    fontSize: 10,
     fontFamily: 'Urbanist-Regular',
-    color: '#1B1B1B',
+    color: '#B8BEC6',
   },
   headerText: {
     fontSize: hp(3.4),

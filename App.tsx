@@ -18,11 +18,8 @@ import {
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import OpeningScreen from './src/screens/OpeningScreen';
-import SignIn from './src/screens/SignIn';
-import SignUp from './src/screens/SignUp';
 import BottomTab from './src/navigation/BottomTab';
-import AddLinks from './src/screens/AddLinks';
+import SearchScreen from './src/screens/SearchScreen';
 import DoctorDetails from './src/screens/DoctorDetails';
 const Stack = createNativeStackNavigator();
 
@@ -39,6 +36,11 @@ const App = () => {
           <Stack.Screen
             name="DoctorDetails"
             component={DoctorDetails}
+            options={{header: () => null}}
+          />
+          <Stack.Screen
+            name="SearchScreen"
+            component={SearchScreen}
             options={{header: () => null}}
           />
           {/* 

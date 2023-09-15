@@ -18,18 +18,21 @@ import PlusSVG from '../assets/svgs/PlusSVG';
 import DoctorContainer from '../../components/DoctorContainer';
 
 const Home = (props: any) => {
-  console.log('=======props=============================');
-  console.log(props);
-  console.log('====================================');
   const [isEdit, setIsEdit] = useState<boolean>(false);
   return (
     <SafeAreaView style={StyleGuide.fullBackground}>
+      <Text
+      onPress={()=> props?.navigation?.navigate('DoctorDetails')}
+      >
+        testtt
+      </Text>
       <Header title={'Find Doctors'} />
       <ScrollView
         style={{
           paddingHorizontal: 16,
+          flex:1,
         }}>
-        <DoctorContainer />
+        <DoctorContainer navigation={props?.navigation} />
         <DoctorContainer />
         <DoctorContainer />
         <DoctorContainer />

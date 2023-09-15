@@ -3,13 +3,16 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
-import AddLinks from '../screens/AddLinks';
+import SearchScreen from '../screens/SearchScreen';
 import Connections from '../screens/Connections';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import StyleGuide from '../../constants/StyleGuide';
 import HomeSVG from '../assets/svgs/HomeSVG';
 import ConnectionSVG from '../assets/svgs/ConnectionSVG';
 import AddCircleSVG from '../assets/svgs/AddCircleSVG';
+import SearchSVG from '../assets/svgs/SearchSVG';
+import Paper from '../assets/svgs/Paper';
+import NotificationSVG from '../assets/svgs/NotificationSVG';
 const Tab = createBottomTabNavigator();
 
 const BottomTab = () => {
@@ -32,41 +35,46 @@ const BottomTab = () => {
           tabBarIcon: ({focused, size}) => {
             return (
               <View style={StyleGuide.center}>
-                {focused ? <HomeSVG /> : <HomeSVG box={'white'} plus={'#1B1B1B'} />}
-              </View>
-            );
-          },
-        })}
-      />
-      <Tab.Screen
-        name="AddLinks"
-        component={AddLinks}
-        options={() => ({
-          tabBarIcon: ({focused, size}) => {
-            return (
-                <View style={StyleGuide.center}>
                 {focused ? (
-                  <AddCircleSVG />
+                  <HomeSVG />
                 ) : (
-                  <AddCircleSVG  fill={'#1B1B1B'} />
+                  <HomeSVG stroke={'#B8BEC6'} />
                 )}
+                <Text
+                  style={[
+                    StyleGuide.bottomNavText,
+                    focused && {
+                      fontWeight: '600',
+                      fontSize: 12,
+                      color: '#5492FD',
+                    },
+                  ]}>
+                  Home
+                </Text>
               </View>
             );
           },
         })}
       />
       <Tab.Screen
-        name="Connections"
-        component={Connections}
+        name="SearchScreen"
+        component={SearchScreen}
         options={() => ({
           tabBarIcon: ({focused, size}) => {
             return (
               <View style={StyleGuide.center}>
-                {focused ? (
-                  <ConnectionSVG />
-                ) : (
-                  <ConnectionSVG background={'white'} />
-                )}
+                {focused ? <SearchSVG /> : <SearchSVG fill={'#B8BEC6'} />}
+                <Text
+                  style={[
+                    StyleGuide.bottomNavText,
+                    focused && {
+                      fontWeight: '600',
+                      fontSize: 12,
+                      color: '#5492FD',
+                    },
+                  ]}>
+                  Search
+                </Text>
               </View>
             );
           },

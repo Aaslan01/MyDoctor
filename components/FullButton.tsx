@@ -8,7 +8,7 @@ import StyleGuide from '../constants/StyleGuide';
 
 interface Props {
   title: string;
-  onPress?: () => {};
+  onPress?: any;
   disable?: boolean;
   loading?: boolean;
   buttonStyle?: any;
