@@ -22,8 +22,15 @@ import BottomTab from './src/navigation/BottomTab';
 import SearchScreen from './src/screens/SearchScreen';
 import DoctorDetails from './src/screens/DoctorDetails';
 const Stack = createNativeStackNavigator();
-
+import { I18nManager } from 'react-native';
 const App = () => {
+
+  function forceLayout(rtl: boolean) {
+    I18nManager.allowRTL(true);
+    I18nManager.forceRTL(true);
+    // RNRestart.restart();
+  }
+  forceLayout(true)
   return (
     <NavigationContainer>
       {
