@@ -29,6 +29,7 @@ const PriceBoxes = () => {
             fontSize: 20,
             fontWeight: '700',
             marginTop: 2,
+            color: '#2A2A2A'
           }}>
           {price}{' '}
           <Text

@@ -1,4 +1,12 @@
-import {View, Text, ImageBackground, Image} from 'react-native';
+import {
+  View,
+  Text,
+  ImageBackground,
+  Image,
+  StyleSheet,
+  ScrollView,
+  Platform,
+} from 'react-native';
 import React from 'react';
 import StyleGuide from '../../constants/StyleGuide';
 import ColorStatus from '../assets/svgs/ColorStatus';
@@ -14,7 +22,11 @@ const DoctorDetails = () => {
           StyleGuide.p12,
           {borderRadius: 8},
         ]}>
-        <Text style={[StyleGuide.semiBold16, {color: StyleGuide.colors.text}]}>
+        <Text
+          style={[
+            StyleGuide.semiBold16,
+            {color: StyleGuide.colors.text, fontWeight: '700'},
+          ]}>
           Biography
         </Text>
         <Text
@@ -47,10 +59,12 @@ const DoctorDetails = () => {
         ]}>
         <Text style={[StyleGuide.regular14, {color: '#2A2A2A'}]}>Monday</Text>
         <View>
-          <Text style={[StyleGuide.regular14, StyleGuide.mv2, {color: '#2A2A2A'}]}>
+          <Text
+            style={[StyleGuide.regular14, StyleGuide.mv2, {color: '#2A2A2A'}]}>
             09:00 AM - 12:30 PM
           </Text>
-          <Text style={[StyleGuide.regular14, StyleGuide.mv2, {color: '#2A2A2A'}]}>
+          <Text
+            style={[StyleGuide.regular14, StyleGuide.mv2, {color: '#2A2A2A'}]}>
             09:00 AM - 12:30 PM
           </Text>
         </View>
@@ -75,16 +89,81 @@ const DoctorDetails = () => {
         ]}>
         <Text style={[StyleGuide.regular14, {color: '#2A2A2A'}]}>Monday</Text>
         <View>
-          <Text style={[StyleGuide.regular14, StyleGuide.mv2, {color: '#2A2A2A'}]}>
+          <Text
+            style={[StyleGuide.regular14, StyleGuide.mv2, {color: '#2A2A2A'}]}>
             09:00 AM - 12:30 PM
           </Text>
         </View>
       </View>
     );
   }
+  function Certificate() {
+    return (
+      <View
+        style={[StyleGuide.colorBackground, StyleGuide.p12, {borderRadius: 8}]}>
+        <Text
+          style={[
+            StyleGuide.semiBold14,
+            {color: StyleGuide.colors.text, fontWeight: '600', width: '70%'},
+          ]}>
+          Certified Patient Care Technician (CPCT)
+        </Text>
+        <Text
+          style={[
+            StyleGuide.semiBold16,
+            {fontWeight: '600', position: 'absolute', right: 12, top: 12},
+          ]}>
+          2020
+        </Text>
+        <Text
+          style={[StyleGuide.regular14, StyleGuide.mt10, {color: '#6D6D6D'}]}>
+          University of Basrah
+        </Text>
+      </View>
+    );
+  }
+  function Feedbacks(name: string, comment: string) {
+    return (
+      <View
+        style={[
+          StyleGuide.colorBackground,
+          StyleGuide.p12,
+          StyleGuide.mt12,
+          {borderRadius: 8},
+        ]}>
+        <View style={StyleGuide.fdr}>
+          <Image
+            style={{
+              height: 40,
+              width: 40,
+              resizeMode: 'contain',
+              borderRadius: 20,
+            }}
+            source={require('../assets/images/Doctor.png')}
+          />
+          <View style={StyleGuide.ph10}>
+            <Text style={[StyleGuide.semiBold16, {fontWeight: '600'}]}>
+              {name}
+            </Text>
+          </View>
+        </View>
+        <Text style={[StyleGuide.regular14, StyleGuide.mt10, {color: '#000'}]}>
+          {comment}
+        </Text>
+        <Text
+          style={[StyleGuide.regular12, StyleGuide.mt10, {color: '#6D6D6D'}]}>
+          Jan 22, 2020
+        </Text>
+      </View>
+    );
+  }
 
   return (
-    <View style={[StyleGuide.flex1, StyleGuide.mainBackground]}>
+    <ScrollView
+      contentContainerStyle={{flex: 1}}
+      scrollEnabled
+      showsVerticalScrollIndicator={false}
+      style={[StyleGuide.mainBackground, StyleGuide.flex1]}>
       <View
         style={[
           StyleGuide.center,
@@ -96,7 +175,6 @@ const DoctorDetails = () => {
         ]}>
         <Image
           style={{
-            flex: 1,
             height: 220,
             width: 220,
             position: 'absolute', //Here is the trick
@@ -110,7 +188,7 @@ const DoctorDetails = () => {
             StyleGuide.fdrac,
             {
               position: 'absolute',
-              top: '20%',
+              top: Platform.OS == "android" ? '8%' : '20%',
               right: 20,
             },
           ]}>
@@ -125,7 +203,6 @@ const DoctorDetails = () => {
         style={[
           StyleGuide.ph16,
           {
-            flex: 1,
             backgroundColor: '#FBFBFB',
             borderTopLeftRadius: 10,
             borderTopRightRadius: 10,
@@ -164,24 +241,50 @@ const DoctorDetails = () => {
             3.2
           </Text>
         </View>
+
         {/* Biography */}
-        {BioInfo()}
+        {/* {BioInfo()} */}
         <PriceBoxes />
         {/* Availibilty Timings */}
-
-        <Text
-          style={[
-            StyleGuide.semiBold16,
-            StyleGuide.mt16,
-            {color: StyleGuide.colors.text, fontWeight: '600', fontSize: 16},
-          ]}>
-          Availibilty Timings
+        <Text style={styles.headings}>Availibilty Timings</Text>
+        {/* {TimeInfo()}
+        {TimeInfoTwo()} */}
+        {/* Certificate */}
+        <Text style={styles.headings}>Certifications</Text>
+        {/* {Certificate()} */}
+        {/* Feedback */}
+        <Text style={styles.headings}>
+          Feedback{' '}
+          <Text
+            style={{
+              fontSize: 12,
+              color: '#B8BEC6',
+              fontWeight: '500',
+            }}>
+            (23 reviews)
+          </Text>
         </Text>
-        {TimeInfo()}
-        {TimeInfoTwo()}
+        {Feedbacks(
+          'Nur Wainwright',
+          ' Volutpat nec, dictumst adipiscing mauris molestie a. Proin sit libero tristique suspendisse.',
+        )}
+        {Feedbacks(
+          'Ryan Curtis',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. At nunc commodo vel interdum neque, aliquam enim pharetra, fusce. Faucibus et ultricies vitae interdum.',
+        )}
       </View>
-    </View>
+    </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  headings: {
+    fontWeight: '600',
+    fontSize: 16,
+    fontFamily: 'Urbanist-SemiBold',
+    color: '#2A2A2A',
+    marginTop: 20,
+  },
+});
 
 export default DoctorDetails;
