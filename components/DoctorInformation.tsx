@@ -37,19 +37,27 @@ const DoctorInformation = () => {
             StyleGuide.mt2,
             {color: StyleGuide.colors.text, fontWeight: '600'},
           ]}>
-          Dr. Yaser Qurban
+          {/* Dr. Yaser Qurban */}د. ياسر يعقوب
         </Text>
         <Text
-          style={[StyleGuide.semiBold14, StyleGuide.mt2, {fontWeight: '600'}]}>
-          General Medicine
+          style={[
+            StyleGuide.semiBold14,
+            StyleGuide.mt2,
+            {fontWeight: '600', textAlign: 'left'},
+          ]}>
+          طب عام
         </Text>
         <Text
           style={[
             StyleGuide.semiBold12,
             StyleGuide.mt2,
-            {color: StyleGuide.colors.lightText, fontWeight: '500'},
+            {
+              color: StyleGuide.colors.lightText,
+              fontWeight: '500',
+              textAlign: 'left',
+            },
           ]}>
-          2 Reviews
+          3 تقييمات
         </Text>
         <View style={[StyleGuide.fdrac, StyleGuide.mt2]}>
           <Image
@@ -61,7 +69,8 @@ const DoctorInformation = () => {
               StyleGuide.semiBold12,
               {color: StyleGuide.colors.lightText},
             ]}>
-            Iraq
+            {' '}
+            العراق
           </Text>
         </View>
       </View>

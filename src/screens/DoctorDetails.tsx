@@ -19,6 +19,7 @@ import {useNavigation} from '@react-navigation/native';
 import Peoples from '../assets/svgs/Peoples';
 import HomeB from '../assets/svgs/HomeB';
 import Paper from '../assets/svgs/Paper';
+import RightArrow from '../assets/svgs/RightArrow';
 
 const DoctorDetails = () => {
   const navigation = useNavigation();
@@ -38,17 +39,112 @@ const DoctorDetails = () => {
             StyleGuide.semiBold16,
             {color: StyleGuide.colors.text, fontWeight: '700'},
           ]}>
-          Biography
+          نبذة عني
         </Text>
         <Text
           style={[
             StyleGuide.regular14,
             {color: '#6D6D6D', textAlign: 'center'},
           ]}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam erat
-          vestibulum cursus eget eleifend maecenas aenean in aenean. Nunc
-          dignissim enim, vitae tincidunt morbi massa sed
+          لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو
+          أيوسمود تيمبور أنكايد يديونتيوت لابوري ات دولار ماجري.
         </Text>
+      </View>
+    );
+  }
+  function DoctorsNewAmenities() {
+    return (
+      <View style={[StyleGuide.fdrjsb, StyleGuide.mt20]}>
+        <View
+          style={[
+            StyleGuide.p8,
+            StyleGuide.colorBackground,
+            {
+              borderRadius: 8,
+              borderWidth: 1,
+              borderColor: '#EEE',
+              width: '30%',
+            },
+          ]}>
+          <Text
+            style={[
+              StyleGuide.regular12,
+              {color: '#959BA4', textAlign: 'left'},
+            ]}>
+            المرضى
+          </Text>
+          <View style={[StyleGuide.fdr, StyleGuide.mt4, StyleGuide.colorBackground]}>
+            <Peoples />
+            <Text
+              style={[
+                StyleGuide.semiBold16,
+                StyleGuide.mh10,
+                {color: StyleGuide.colors.text, fontWeight: '600'},
+              ]}>
+              200+
+            </Text>
+          </View>
+        </View>
+        <View
+          style={[
+            StyleGuide.p8,
+            StyleGuide.colorBackground,
+            {
+              borderRadius: 8,
+              borderWidth: 1,
+              borderColor: '#EEE',
+              width: '30%',
+            },
+          ]}>
+          <Text
+            style={[
+              StyleGuide.regular12,
+              {color: '#959BA4', textAlign: 'left'},
+            ]}>
+            زيارات منزلية
+          </Text>
+          <View style={[StyleGuide.fdr, StyleGuide.mt4]}>
+            <HomeB />
+            <Text
+              style={[
+                StyleGuide.semiBold16,
+                StyleGuide.mh10,
+                {color: StyleGuide.colors.text, fontWeight: '600'},
+              ]}>
+              30+
+            </Text>
+          </View>
+        </View>
+        <View
+          style={[
+            StyleGuide.p8,
+            StyleGuide.colorBackground,
+            {
+              borderRadius: 8,
+              borderWidth: 1,
+              borderColor: '#EEE',
+              width: '30%',
+            },
+          ]}>
+          <Text
+            style={[
+              StyleGuide.regular12,
+              {color: '#959BA4', textAlign: 'left'},
+            ]}>
+            الخبرة
+          </Text>
+          <View style={[StyleGuide.fdr, StyleGuide.mt4]}>
+            <Paper />
+            <Text
+              style={[
+                StyleGuide.semiBold16,
+                StyleGuide.mh10,
+                {color: StyleGuide.colors.text, fontWeight: '600'},
+              ]}>
+              200+
+            </Text>
+          </View>
+        </View>
       </View>
     );
   }
@@ -68,15 +164,15 @@ const DoctorDetails = () => {
             justifyContent: 'space-between',
           },
         ]}>
-        <Text style={[StyleGuide.regular14, {color: '#2A2A2A'}]}>Monday</Text>
+        <Text style={[StyleGuide.regular14, {color: '#2A2A2A'}]}>الأثنين</Text>
         <View>
           <Text
             style={[StyleGuide.regular14, StyleGuide.mv2, {color: '#2A2A2A'}]}>
-            09:00 AM - 12:30 PM
+            12:30 مساء - 09:00 صباحا
           </Text>
           <Text
             style={[StyleGuide.regular14, StyleGuide.mv2, {color: '#2A2A2A'}]}>
-            09:00 AM - 12:30 PM
+            01:30 مساء - 10:00 صباحا
           </Text>
         </View>
       </View>
@@ -98,11 +194,11 @@ const DoctorDetails = () => {
             justifyContent: 'space-between',
           },
         ]}>
-        <Text style={[StyleGuide.regular14, {color: '#2A2A2A'}]}>Monday</Text>
+        <Text style={[StyleGuide.regular14, {color: '#2A2A2A'}]}>الثلاثاء</Text>
         <View>
           <Text
             style={[StyleGuide.regular14, StyleGuide.mv2, {color: '#2A2A2A'}]}>
-            09:00 AM - 12:30 PM
+            01:30 مساء - 10:00 صباحا
           </Text>
         </View>
       </View>
@@ -121,9 +217,14 @@ const DoctorDetails = () => {
         <Text
           style={[
             StyleGuide.semiBold14,
-            {color: StyleGuide.colors.text, fontWeight: '600', width: '70%'},
+            {
+              color: StyleGuide.colors.text,
+              fontWeight: '600',
+              width: '70%',
+              textAlign: 'left',
+            },
           ]}>
-          Certified Patient Care Technician (CPCT)
+          شهادة رعاية مرضى معتمدة (CPCT)
         </Text>
         <Text
           style={[
@@ -133,8 +234,12 @@ const DoctorDetails = () => {
           2020
         </Text>
         <Text
-          style={[StyleGuide.regular14, StyleGuide.mt14, {color: '#6D6D6D'}]}>
-          University of Basrah
+          style={[
+            StyleGuide.regular14,
+            StyleGuide.mt14,
+            {color: '#6D6D6D', textAlign: 'left'},
+          ]}>
+          جامعة البصرة
         </Text>
       </View>
     );
@@ -179,100 +284,28 @@ const DoctorDetails = () => {
             />
           </View>
         </View>
-        <Text style={[StyleGuide.regular14, StyleGuide.mt10, {color: '#000'}]}>
+        <Text
+          style={[
+            StyleGuide.regular14,
+            StyleGuide.mt10,
+            {color: '#000', textAlign: 'left'},
+          ]}>
           {comment}
         </Text>
         <Text
-          style={[StyleGuide.regular12, StyleGuide.mt10, {color: '#6D6D6D'}]}>
-          Jan 22, 2020
+          style={[
+            StyleGuide.regular12,
+            StyleGuide.mt10,
+            {color: '#6D6D6D', textAlign: 'left'},
+          ]}>
+          يناير 22, 2020{' '}
         </Text>
-      </View>
-    );
-  }
-  function DoctorsNewAmenities() {
-    return (
-      <View style={[StyleGuide.fdrjsb, StyleGuide.mt20]}>
-        <View
-          style={[
-            StyleGuide.p8,
-            {
-              borderRadius: 8,
-              borderWidth: 1,
-              borderColor: '#EEE',
-              width: '30%',
-            },
-          ]}>
-          <Text style={[StyleGuide.regular12, {color: '#959BA4'}]}>
-            Online Patients
-          </Text>
-          <View style={[StyleGuide.fdr, StyleGuide.mt4]}>
-            <Peoples />
-            <Text
-              style={[
-                StyleGuide.semiBold16,
-                StyleGuide.mh10,
-                {color: StyleGuide.colors.text, fontWeight: '600'},
-              ]}>
-              200+
-            </Text>
-          </View>
-        </View>
-        <View
-          style={[
-            StyleGuide.p8,
-            {
-              borderRadius: 8,
-              borderWidth: 1,
-              borderColor: '#EEE',
-              width: '30%',
-            },
-          ]}>
-          <Text style={[StyleGuide.regular12, {color: '#959BA4'}]}>
-            Home Visits
-          </Text>
-          <View style={[StyleGuide.fdr, StyleGuide.mt4]}>
-            <HomeB />
-            <Text
-              style={[
-                StyleGuide.semiBold16,
-                StyleGuide.mh10,
-                {color: StyleGuide.colors.text, fontWeight: '600'},
-              ]}>
-              30+
-            </Text>
-          </View>
-        </View>
-        <View
-          style={[
-            StyleGuide.p8,
-            {
-              borderRadius: 8,
-              borderWidth: 1,
-              borderColor: '#EEE',
-              width: '30%',
-            },
-          ]}>
-          <Text style={[StyleGuide.regular12, {color: '#959BA4'}]}>
-            Online Patients
-          </Text>
-          <View style={[StyleGuide.fdr, StyleGuide.mt4]}>
-            <Paper />
-            <Text
-              style={[
-                StyleGuide.semiBold16,
-                StyleGuide.mh10,
-                {color: StyleGuide.colors.text, fontWeight: '600'},
-              ]}>
-              200+
-            </Text>
-          </View>
-        </View>
       </View>
     );
   }
 
   return (
-    <View style={{flex: 1, borderWidth: 1}}>
+    <View style={{flex: 1, borderWidth: 1, direction: 'rtl'}}>
       <StatusBar barStyle={'dark-content'} />
       <ScrollView
         contentContainerStyle={{flexGrow: 1}}
@@ -297,7 +330,8 @@ const DoctorDetails = () => {
                 Platform.OS == 'android' ? StatusBar.currentHeight - 30 : '20%',
             }}
             onPress={() => navigation.goBack()}>
-            <LeftArrow />
+            {/* <LeftArrow /> */}
+            <RightArrow />
           </TouchableOpacity>
           <Image
             style={{
@@ -326,7 +360,7 @@ const DoctorDetails = () => {
                 StyleGuide.ml5,
                 {color: '#098416'},
               ]}>
-              Online
+              متصل
             </Text>
           </View>
         </View>
@@ -356,7 +390,7 @@ const DoctorDetails = () => {
                   fontSize: 20,
                 },
               ]}>
-              Dr. Ching Ming Yu
+              د. أحمد كريم
             </Text>
             {/* Detail */}
             <Text
@@ -365,7 +399,7 @@ const DoctorDetails = () => {
                 StyleGuide.mt4,
                 {fontWeight: '600'},
               ]}>
-              General Medicine - Cardiovascular Disease
+              طب عام - أمراض قلب وأوعية دموية
             </Text>
             {/* Ratting */}
             <View style={[StyleGuide.fdrac, StyleGuide.mt6, StyleGuide.mb10]}>
@@ -393,31 +427,31 @@ const DoctorDetails = () => {
           {DoctorsNewAmenities()}
           <PriceBoxes />
           {/* Availibilty Timings */}
-          <Text style={styles.headings}>Availibilty Timings</Text>
+          <Text style={styles.headings}>المواعيد المتاحة</Text>
           {TimeInfo()}
           {TimeInfoTwo()}
           {/* Certificate */}
-          <Text style={styles.headings}>Certifications</Text>
+          <Text style={styles.headings}>الشهادات</Text>
           {Certificate()}
           {/* Feedback */}
           <Text style={styles.headings}>
-            Feedback{' '}
+            التقييمات{' '}
             <Text
               style={{
                 fontSize: 12,
                 color: '#B8BEC6',
                 fontWeight: '500',
               }}>
-              (23 reviews)
+              (23 تقييم)
             </Text>
           </Text>
           {Feedbacks(
-            'Nur Wainwright',
-            ' Volutpat nec, dictumst adipiscing mauris molestie a. Proin sit libero tristique suspendisse.',
+            'نور الهدى كريم',
+            'لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايد يديونتيوت لابوري ات دولار ماجري',
           )}
           {Feedbacks(
-            'Ryan Curtis',
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. At nunc commodo vel interdum neque, aliquam enim pharetra, fusce. Faucibus et ultricies vitae interdum.',
+            'أيمن كريم',
+            'لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايد يديونتيوت لابوري ات دولار ماجري. لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايد يديونتيوت لابوري ات دولار ماجري',
           )}
         </View>
       </ScrollView>
@@ -432,6 +466,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Urbanist-SemiBold',
     color: '#2A2A2A',
     marginTop: 20,
+    textAlign: 'left',
   },
   shadow: {
     backgroundColor: 'white', // Add your background color here

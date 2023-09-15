@@ -32,14 +32,15 @@ const DoctorAmenities = () => {
               borderRadius: 12,
             },
           ]}>
-          {header?.includes('L') ? <LocationB /> : <PersonBeat />}
+          {header?.includes('المنطقة') ? <LocationB /> : <PersonBeat />}
         </View>
-        <View style={[StyleGuide.flex1, StyleGuide.ml10]}>
+        <View style={[StyleGuide.flex1, StyleGuide.mh10]}>
           <Text
             style={[
               StyleGuide.regular12,
               {
                 fontWeight: '700',
+                textAlign: 'left'
               },
             ]}>
             {header}
@@ -49,6 +50,7 @@ const DoctorAmenities = () => {
               StyleGuide.regular12,
               {
                 color: StyleGuide.colors.text,
+                textAlign: 'left'
               },
             ]}>
             {text}
@@ -69,29 +71,31 @@ const DoctorAmenities = () => {
           },
         ]}>
         <BoxBack />
-        <View style={[StyleGuide.flex1, StyleGuide.ml10]}>
+        <View style={[StyleGuide.flex1, StyleGuide.mh10]}>
           <Text
             style={[
               StyleGuide.regular12,
               {
                 fontWeight: '700',
+                textAlign: 'left'
               },
             ]}>
-            WorkPlace
+            مكان العمل
           </Text>
           <Text
             style={[
               StyleGuide.regular12,
               {
                 color: StyleGuide.colors.text,
+                textAlign: 'left'
               },
             ]}>
-            Yarmuk Hospital Baghdad iraq
+            مستشفى اليرموك بغداد, العراق
           </Text>
         </View>
       </View>
-      {SmallContainer('Location', 'Al Mansour Baghdad, Iraq')}
-      {SmallContainer('Patients', '20')}
+      {SmallContainer('المنطقة', 'المنصور بغداد')}
+      {SmallContainer('المرضى', '20')}
     </View>
   );
 };

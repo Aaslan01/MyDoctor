@@ -20,15 +20,16 @@ import DoctorContainer from '../../components/DoctorContainer';
 const Home = (props: any) => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
   return (
-    <SafeAreaView style={[StyleGuide.fullBackground]}>
-      <Header title={'Find Doctors'} />
+    <SafeAreaView style={[StyleGuide.fullBackground,{direction:'rtl'}]}>
+      {/* <Header title={'Find Doctors'} /> */}
+      <Header title={'الأطباء'} />
       <ScrollView
       showsVerticalScrollIndicator={false}
         style={{
-          paddingHorizontal: 16,
+          
           flex:1,
         }}>
-        <DoctorContainer navigation={props?.navigation} />
+        <DoctorContainer />
         <DoctorContainer />
         <DoctorContainer />
         <DoctorContainer />
