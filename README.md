@@ -1,3 +1,7 @@
+![Demo](src/assets/images/demo1.png)
+![Demo](src/assets/images/demo2.png)
+![Demo](src/assets/images/demo3.png)
+![Demo](src/assets/images/demo4.png)
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
