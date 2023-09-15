@@ -24,7 +24,7 @@ const Home = (props: any) => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
   return (
     <SafeAreaView style={StyleGuide.fullBackground}>
-      <Header title={'ContactMe'} />
+      <Header title={'Find Doctors'} />
       <ScrollView
         style={{
           paddingHorizontal: 16,

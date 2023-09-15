@@ -65,6 +65,10 @@ const StyleGuide = {
 
   fdr: {flexDirection: 'row'},
   aIc: {alignItems: 'center'},
+  fdrjsb: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   fdrac: {
     flexDirection: 'row',
     alignItems: 'center',

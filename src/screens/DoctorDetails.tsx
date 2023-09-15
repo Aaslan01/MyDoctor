@@ -6,13 +6,23 @@ import {
   StyleSheet,
   ScrollView,
   Platform,
+  StatusBar,
+  TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import StyleGuide from '../../constants/StyleGuide';
 import ColorStatus from '../assets/svgs/ColorStatus';
 import PriceBoxes from '../../components/PriceBoxes';
+import {Rating, AirbnbRating} from 'react-native-ratings';
+import LeftArrow from '../assets/svgs/LeftArrow';
+import {useNavigation} from '@react-navigation/native';
+import Peoples from '../assets/svgs/Peoples';
+import HomeB from '../assets/svgs/HomeB';
+import Paper from '../assets/svgs/Paper';
 
 const DoctorDetails = () => {
+  const navigation = useNavigation();
+
   function BioInfo() {
     return (
       <View
@@ -20,6 +30,7 @@ const DoctorDetails = () => {
           StyleGuide.center,
           StyleGuide.colorBackground,
           StyleGuide.p12,
+          styles.shadow,
           {borderRadius: 8},
         ]}>
         <Text
@@ -100,7 +111,13 @@ const DoctorDetails = () => {
   function Certificate() {
     return (
       <View
-        style={[StyleGuide.colorBackground, StyleGuide.p12, {borderRadius: 8}]}>
+        style={[
+          StyleGuide.colorBackground,
+          StyleGuide.p12,
+          styles.shadow,
+          StyleGuide.mt12,
+          {borderRadius: 8},
+        ]}>
         <Text
           style={[
             StyleGuide.semiBold14,
@@ -116,7 +133,7 @@ const DoctorDetails = () => {
           2020
         </Text>
         <Text
-          style={[StyleGuide.regular14, StyleGuide.mt10, {color: '#6D6D6D'}]}>
+          style={[StyleGuide.regular14, StyleGuide.mt14, {color: '#6D6D6D'}]}>
           University of Basrah
         </Text>
       </View>
@@ -129,6 +146,7 @@ const DoctorDetails = () => {
           StyleGuide.colorBackground,
           StyleGuide.p12,
           StyleGuide.mt12,
+          styles.shadow,
           {borderRadius: 8},
         ]}>
         <View style={StyleGuide.fdr}>
@@ -145,6 +163,20 @@ const DoctorDetails = () => {
             <Text style={[StyleGuide.semiBold16, {fontWeight: '600'}]}>
               {name}
             </Text>
+            <Rating
+              type="custom"
+              readonly
+              ratingCount={5}
+              imageSize={10}
+              startingValue={2}
+              //   ratingColor="#3498db"
+              ratingBackgroundColor="#c8c7c8"
+              style={{
+                alignItems: 'flex-start',
+              }}
+              // showRating
+              //   onFinishRating={this.ratingCompleted}
+            />
           </View>
         </View>
         <Text style={[StyleGuide.regular14, StyleGuide.mt10, {color: '#000'}]}>
@@ -157,123 +189,239 @@ const DoctorDetails = () => {
       </View>
     );
   }
-
-  return (
-    <ScrollView
-      contentContainerStyle={{flex: 1}}
-      scrollEnabled
-      showsVerticalScrollIndicator={false}
-      style={[StyleGuide.mainBackground, StyleGuide.flex1]}>
-      <View
-        style={[
-          StyleGuide.center,
-          {
-            height: '30%',
-            width: '100%',
-            backgroundColor: '#C4D8E8',
-          },
-        ]}>
-        <Image
-          style={{
-            height: 220,
-            width: 220,
-            position: 'absolute', //Here is the trick
-            bottom: 0, //Here is the trick
-            resizeMode: 'contain',
-          }}
-          source={require('../assets/images/DoctorFull.png')}
-        />
+  function DoctorsNewAmenities() {
+    return (
+      <View style={[StyleGuide.fdrjsb, StyleGuide.mt20]}>
         <View
           style={[
-            StyleGuide.fdrac,
+            StyleGuide.p8,
             {
-              position: 'absolute',
-              top: Platform.OS == "android" ? '8%' : '20%',
-              right: 20,
+              borderRadius: 8,
+              borderWidth: 1,
+              borderColor: '#EEE',
+              width: '30%',
             },
           ]}>
-          <ColorStatus />
-          <Text
-            style={[StyleGuide.regular14, StyleGuide.ml5, {color: '#098416'}]}>
-            Online
+          <Text style={[StyleGuide.regular12, {color: '#959BA4'}]}>
+            Online Patients
           </Text>
+          <View style={[StyleGuide.fdr, StyleGuide.mt4]}>
+            <Peoples />
+            <Text
+              style={[
+                StyleGuide.semiBold16,
+                StyleGuide.mh10,
+                {color: StyleGuide.colors.text, fontWeight: '600'},
+              ]}>
+              200+
+            </Text>
+          </View>
+        </View>
+        <View
+          style={[
+            StyleGuide.p8,
+            {
+              borderRadius: 8,
+              borderWidth: 1,
+              borderColor: '#EEE',
+              width: '30%',
+            },
+          ]}>
+          <Text style={[StyleGuide.regular12, {color: '#959BA4'}]}>
+            Home Visits
+          </Text>
+          <View style={[StyleGuide.fdr, StyleGuide.mt4]}>
+            <HomeB />
+            <Text
+              style={[
+                StyleGuide.semiBold16,
+                StyleGuide.mh10,
+                {color: StyleGuide.colors.text, fontWeight: '600'},
+              ]}>
+              30+
+            </Text>
+          </View>
+        </View>
+        <View
+          style={[
+            StyleGuide.p8,
+            {
+              borderRadius: 8,
+              borderWidth: 1,
+              borderColor: '#EEE',
+              width: '30%',
+            },
+          ]}>
+          <Text style={[StyleGuide.regular12, {color: '#959BA4'}]}>
+            Online Patients
+          </Text>
+          <View style={[StyleGuide.fdr, StyleGuide.mt4]}>
+            <Paper />
+            <Text
+              style={[
+                StyleGuide.semiBold16,
+                StyleGuide.mh10,
+                {color: StyleGuide.colors.text, fontWeight: '600'},
+              ]}>
+              200+
+            </Text>
+          </View>
         </View>
       </View>
-      <View
-        style={[
-          StyleGuide.ph16,
-          {
-            backgroundColor: '#FBFBFB',
-            borderTopLeftRadius: 10,
-            borderTopRightRadius: 10,
-            marginTop: -20,
-          },
-        ]}>
+    );
+  }
+
+  return (
+    <View style={{flex: 1, borderWidth: 1}}>
+      <StatusBar barStyle={'dark-content'} />
+      <ScrollView
+        contentContainerStyle={{flexGrow: 1}}
+        scrollEnabled
+        showsVerticalScrollIndicator={false}
+        style={[StyleGuide.fullBackground]}>
         <View
-          style={{
-            alignItems: 'center',
-          }}>
-          {/* Name */}
-          <Text
+          style={[
+            StyleGuide.center,
+            {
+              width: '100%',
+              backgroundColor: '#C4D8E8',
+              paddingTop:
+                Platform.OS == 'android' ? StatusBar.currentHeight - 20 : '10%',
+            },
+          ]}>
+          <TouchableOpacity
+            style={{
+              position: 'absolute',
+              left: 16,
+              top:
+                Platform.OS == 'android' ? StatusBar.currentHeight - 30 : '20%',
+            }}
+            onPress={() => navigation.goBack()}>
+            <LeftArrow />
+          </TouchableOpacity>
+          <Image
+            style={{
+              height: 220,
+              width: 220,
+              resizeMode: 'contain',
+            }}
+            source={require('../assets/images/DoctorFull.png')}
+          />
+          <View
             style={[
-              StyleGuide.semiBold16,
-              StyleGuide.mt20,
-              {color: StyleGuide.colors.text, fontWeight: '700', fontSize: 20},
+              StyleGuide.fdrac,
+              {
+                position: 'absolute',
+                right: 20,
+                top:
+                  Platform.OS == 'android'
+                    ? StatusBar.currentHeight - 30
+                    : '20%',
+              },
             ]}>
-            Dr. Ching Ming Yu
-          </Text>
-          {/* Detail */}
-          <Text
-            style={[
-              StyleGuide.semiBold14,
-              StyleGuide.mt4,
-              {fontWeight: '600'},
-            ]}>
-            General Medicine - Cardiovascular Disease
-          </Text>
-          {/* Ratting */}
-          <Text
-            style={[
-              StyleGuide.semiBold12,
-              StyleGuide.mt2,
-              {color: StyleGuide.colors.lightText, fontWeight: '600'},
-            ]}>
-            3.2
-          </Text>
+            <ColorStatus />
+            <Text
+              style={[
+                StyleGuide.regular14,
+                StyleGuide.ml5,
+                {color: '#098416'},
+              ]}>
+              Online
+            </Text>
+          </View>
         </View>
 
-        {/* Biography */}
-        {/* {BioInfo()} */}
-        <PriceBoxes />
-        {/* Availibilty Timings */}
-        <Text style={styles.headings}>Availibilty Timings</Text>
-        {/* {TimeInfo()}
-        {TimeInfoTwo()} */}
-        {/* Certificate */}
-        <Text style={styles.headings}>Certifications</Text>
-        {/* {Certificate()} */}
-        {/* Feedback */}
-        <Text style={styles.headings}>
-          Feedback{' '}
-          <Text
+        <View
+          style={[
+            StyleGuide.ph16,
+            {
+              backgroundColor: '#FBFBFB',
+              borderTopLeftRadius: 10,
+              borderTopRightRadius: 10,
+              marginTop: -20,
+            },
+          ]}>
+          <View
             style={{
-              fontSize: 12,
-              color: '#B8BEC6',
-              fontWeight: '500',
+              alignItems: 'center',
             }}>
-            (23 reviews)
+            {/* Name */}
+            <Text
+              style={[
+                StyleGuide.semiBold16,
+                StyleGuide.mt20,
+                {
+                  color: StyleGuide.colors.text,
+                  fontWeight: '700',
+                  fontSize: 20,
+                },
+              ]}>
+              Dr. Ching Ming Yu
+            </Text>
+            {/* Detail */}
+            <Text
+              style={[
+                StyleGuide.semiBold14,
+                StyleGuide.mt4,
+                {fontWeight: '600'},
+              ]}>
+              General Medicine - Cardiovascular Disease
+            </Text>
+            {/* Ratting */}
+            <View style={[StyleGuide.fdrac, StyleGuide.mt6, StyleGuide.mb10]}>
+              <Rating
+                type="custom"
+                readonly
+                ratingCount={5}
+                imageSize={10}
+                startingValue={2}
+                ratingBackgroundColor="#c8c7c8"
+              />
+              <Text
+                style={[
+                  StyleGuide.semiBold12,
+                  StyleGuide.ml5,
+                  {color: StyleGuide.colors.lightText, fontWeight: '600'},
+                ]}>
+                3.2
+              </Text>
+            </View>
+          </View>
+
+          {/* Biography */}
+          {BioInfo()}
+          {DoctorsNewAmenities()}
+          <PriceBoxes />
+          {/* Availibilty Timings */}
+          <Text style={styles.headings}>Availibilty Timings</Text>
+          {TimeInfo()}
+          {TimeInfoTwo()}
+          {/* Certificate */}
+          <Text style={styles.headings}>Certifications</Text>
+          {Certificate()}
+          {/* Feedback */}
+          <Text style={styles.headings}>
+            Feedback{' '}
+            <Text
+              style={{
+                fontSize: 12,
+                color: '#B8BEC6',
+                fontWeight: '500',
+              }}>
+              (23 reviews)
+            </Text>
           </Text>
-        </Text>
-        {Feedbacks(
-          'Nur Wainwright',
-          ' Volutpat nec, dictumst adipiscing mauris molestie a. Proin sit libero tristique suspendisse.',
-        )}
-        {Feedbacks(
-          'Ryan Curtis',
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. At nunc commodo vel interdum neque, aliquam enim pharetra, fusce. Faucibus et ultricies vitae interdum.',
-        )}
-      </View>
-    </ScrollView>
+          {Feedbacks(
+            'Nur Wainwright',
+            ' Volutpat nec, dictumst adipiscing mauris molestie a. Proin sit libero tristique suspendisse.',
+          )}
+          {Feedbacks(
+            'Ryan Curtis',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. At nunc commodo vel interdum neque, aliquam enim pharetra, fusce. Faucibus et ultricies vitae interdum.',
+          )}
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 
@@ -284,6 +432,17 @@ const styles = StyleSheet.create({
     fontFamily: 'Urbanist-SemiBold',
     color: '#2A2A2A',
     marginTop: 20,
+  },
+  shadow: {
+    backgroundColor: 'white', // Add your background color here
+    padding: 16, // Add your desired padding
+    shadowColor: 'rgba(134, 134, 153, 0.10)',
+    shadowOffset: {
+      width: -4,
+      height: -4,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 32,
   },
 });
 

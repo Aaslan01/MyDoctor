@@ -1,10 +1,14 @@
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React, {useContext} from 'react';
 import StyleGuide from '../constants/StyleGuide';
-import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP,
+} from 'react-native-responsive-screen';
 // import auth from '@react-native-firebase/auth';
 // import AsyncStorage from '@react-native-community/async-storage';
 import {useNavigation} from '@react-navigation/native';
+import LeftArrow from '../src/assets/svgs/LeftArrow';
 // import {FlagContext} from '../context/FlagContext';
 interface Props {
   title: string;
@@ -21,7 +25,11 @@ const Header: React.FC<Props> = ({title}) => {
         StyleGuide.center,
         {
           height: hp(6),
+          width: widthPercentageToDP(100),
           backgroundColor: '#f2f2f2',
+          borderBottomWidth: 1,
+          borderColor: '#0001',
+          flexDirection: 'row',
           // shadowColor: '#000',
           // shadowOffset: {width: 0, height: 4}, // adjust the height for the desired shadow position
           // shadowOpacity: 0.8,
@@ -29,22 +37,15 @@ const Header: React.FC<Props> = ({title}) => {
           // elevation: 4,
         },
       ]}>
-      <Text style={StyleGuide.headerText}>{title}</Text>
-      {/* <TouchableOpacity
-        onPress={() => {
-          auth()
-            .signOut()
-            .then(() => {
-              console.log('User signed out!'), toggleFalse();
-              AsyncStorage.setItem('AuthData', 'false');
-            });
-        }}
-        >
-        <Image
-          style={StyleGuide.bottomNavIcon}
-          source={require('../src/assets/images/icons/share.png')}
-        />
-      </TouchableOpacity> */}
+      <TouchableOpacity
+        style={{position: 'absolute', left: 16}}
+        onPress={() => navigation.goBack()}>
+        <LeftArrow />
+      </TouchableOpacity>
+      <Text
+        style={[StyleGuide.semiBold16, {fontWeight: '600', color: '#2A2A2A'}]}>
+        {title}
+      </Text>
     </View>
   );
 };
