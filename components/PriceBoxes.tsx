@@ -12,6 +12,7 @@ const PriceBoxes = () => {
           StyleGuide.center,
           StyleGuide.pv10,
           StyleGuide.ph20,
+          StyleGuide.colorBackground,
           // StyleGuide.
           {
             borderRadius: 8,
@@ -45,8 +46,8 @@ const PriceBoxes = () => {
 
   return (
     <View style={[StyleGuide.fdr, StyleGuide.mt20]}>
-      {PriceBox('Online Consultation', '150,000')}
-      {PriceBox('Home Consultation', '240,000')}
+      {PriceBox('استشارات أونلاين', '150,000')}
+      {PriceBox('استشارات منزلية', '240,000')}
     </View>
   );
 };

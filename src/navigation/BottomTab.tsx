@@ -24,7 +24,11 @@ const BottomTab = () => {
         tabBarShowLabel: false,
         tabBarHideOnKeyboard: true,
         tabBarStyle: [
-          {backgroundColor: StyleGuide.colors.background, height: hp(8)},
+          {
+            backgroundColor: StyleGuide.colors.background,
+            height: hp(8),
+            direction: 'rtl',
+          },
           Platform.OS === 'ios' && {paddingTop: 15, height: hp(9)},
         ],
       }}>
@@ -35,11 +39,7 @@ const BottomTab = () => {
           tabBarIcon: ({focused, size}) => {
             return (
               <View style={StyleGuide.center}>
-                {focused ? (
-                  <HomeSVG />
-                ) : (
-                  <HomeSVG stroke={'#B8BEC6'} />
-                )}
+                {focused ? <HomeSVG /> : <HomeSVG stroke={'#B8BEC6'} />}
                 <Text
                   style={[
                     StyleGuide.bottomNavText,

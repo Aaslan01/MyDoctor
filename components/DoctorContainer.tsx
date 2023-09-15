@@ -24,7 +24,8 @@ const DoctorContainer = (props: any) => {
       <DoctorAmenities />
       <PriceBoxes />
       <FullButton
-        title={'Book Now'}
+        // title={'Book Now'}
+        title={'احجز الأن'}
         onPress={() => navigation?.navigate('DoctorDetails')}
       />
     </TouchableOpacity>
