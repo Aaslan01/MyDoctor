@@ -1,6 +1,5 @@
 import * as React from "react"
-import Svg, { Path, G, Rect, Defs, ClipPath } from "react-native-svg"
-/* SVGR has dropped some elements not supported by react-native-svg: filter */
+import Svg, { Path } from "react-native-svg"
 
 function SvgComponent(props: any) {
   return (
@@ -12,43 +11,20 @@ function SvgComponent(props: any) {
       fill="none"
       {...props}
     >
-      <Path fill="#1E1E1E" d="M0 0H24V24H0z" />
-      <G clipPath="url(#clip0_0_1)">
-        <Path
-          transform="translate(-37 -749)"
-          fill="#fff"
-          d="M0 0H375V1343H0z"
-        />
-        <G filter="url(#filter0_dd_0_1)">
-          <Rect x={-17} y={-220} width={336} height={380} rx={12} fill="#fff" />
-          <Rect x={-1} y={-39} width={45} height={45} rx={12} fill="#E2EDFF" />
-        </G>
-        <Path d="M-37-16h375v79H-37v-79z" fill="#fff" />
-        <G
-          stroke={props?.stroke??"#5492FD"}
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <Path d="M9.079 16.135h5.815" />
-          <Path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M2.4 13.713c0-5.631.614-5.238 3.919-8.303C7.765 4.246 10.015 2 11.958 2c1.942 0 4.237 2.235 5.696 3.41 3.305 3.065 3.918 2.672 3.918 8.303C21.572 22 19.613 22 11.986 22 4.359 22 2.4 22 2.4 13.713z"
-          />
-        </G>
-      </G>
-      <Defs>
-        <ClipPath id="clip0_0_1">
-          <Path
-            fill="#fff"
-            transform="translate(-37 -749)"
-            d="M0 0H375V1343H0z"
-          />
-        </ClipPath>
-      </Defs>
+      <Path
+        d="M2 12.204c0-2.289 0-3.433.52-4.381.518-.949 1.467-1.537 3.364-2.715l2-1.241C9.889 2.622 10.892 2 12 2c1.108 0 2.11.622 4.116 1.867l2 1.241c1.897 1.178 2.846 1.766 3.365 2.715.519.948.519 2.092.519 4.38v1.522c0 3.9 0 5.851-1.172 7.063C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.212C2 19.576 2 17.626 2 13.725v-1.521z"
+        stroke={props?.stroke??"#5492FD"}
+        strokeWidth={1.5}
+      />
+      <Path
+        d="M15 18H9"
+        stroke={props?.stroke??"#5492FD"}
+        strokeWidth={1.5}
+        strokeLinecap="round"
+      />
     </Svg>
   )
 }
 
 export default SvgComponent
+

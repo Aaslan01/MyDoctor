@@ -8,12 +8,9 @@ import FullButton from './FullButton';
 import {useNavigation} from '@react-navigation/native';
 
 const DoctorContainer = (props: any) => {
-  console.log('==========props==========================');
-  console.log(props);
-  console.log('====================================');
+  const navigation = useNavigation()
   return (
     <TouchableOpacity
-      onPress={() => console.log('hihjii', props)}
       style={[
         StyleGuide.p16,
         StyleGuide.mt14,
@@ -28,7 +25,7 @@ const DoctorContainer = (props: any) => {
       <PriceBoxes />
       <FullButton
         title={'Book Now'}
-        onPress={() => console.log('====================================')}
+        onPress={() => navigation?.navigate('DoctorDetails')}
       />
     </TouchableOpacity>
   );

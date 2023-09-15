@@ -206,7 +206,7 @@ const DoctorDetails = () => {
             Online Patients
           </Text>
           <View style={[StyleGuide.fdr, StyleGuide.mt4]}>
-            <Peoples />
+            {/* <Peoples /> */}
             <Text
               style={[
                 StyleGuide.semiBold16,
@@ -231,7 +231,7 @@ const DoctorDetails = () => {
             Home Visits
           </Text>
           <View style={[StyleGuide.fdr, StyleGuide.mt4]}>
-            <HomeB />
+            {/* <HomeB /> */}
             <Text
               style={[
                 StyleGuide.semiBold16,
@@ -319,7 +319,7 @@ const DoctorDetails = () => {
                     : '20%',
               },
             ]}>
-            <ColorStatus />
+            {/* <ColorStatus /> */}
             <Text
               style={[
                 StyleGuide.regular14,
