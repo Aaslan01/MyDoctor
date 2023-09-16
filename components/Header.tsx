@@ -1,4 +1,4 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, Platform} from 'react-native';
 import React, {useContext} from 'react';
 import StyleGuide from '../constants/StyleGuide';
 import {
@@ -10,22 +10,21 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import LeftArrow from '../src/assets/svgs/LeftArrow';
 import RightArrow from '../src/assets/svgs/RightArrow';
-// import {FlagContext} from '../context/FlagContext';
+import {RtlContext} from '../src/context/RtlContext';
 interface Props {
   title: string;
 }
 
 const Header: React.FC<Props> = ({title}) => {
   // @ts-ignore
-  // const {flag, toggleFalse, toggleTrue} = useContext(FlagContext);
+  const {rtl} = useContext(RtlContext);
   const navigation = useNavigation();
   return (
     <View
-      style={[
-        StyleGuide.pp4,
+      style={[        
         StyleGuide.center,
         {
-          height: hp(6),
+          height: Platform.OS == 'android' ? hp(8) : hp(6),
           width: widthPercentageToDP(100),
           backgroundColor: '#f2f2f2',
           borderBottomWidth: 1,
@@ -40,10 +39,9 @@ const Header: React.FC<Props> = ({title}) => {
         },
       ]}>
       <TouchableOpacity
-        style={{position: 'absolute', left: 16, direction: 'rtl'}}
+        style={{position: 'absolute', left: 16}}
         onPress={() => navigation.goBack()}>
-        {/* <LeftArrow /> */}
-        <RightArrow />
+        {rtl ? <RightArrow /> : <LeftArrow />}
       </TouchableOpacity>
       <Text
         style={[StyleGuide.semiBold16, {fontWeight: '600', color: '#2A2A2A'}]}>

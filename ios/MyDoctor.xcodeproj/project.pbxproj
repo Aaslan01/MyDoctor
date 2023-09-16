@@ -25,6 +25,10 @@
 		D3CD13FF872E42F98489CFD9 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F03CECE7EE40E282288018 /* Poppins-Bold.ttf */; };
 		DD90E3C04B1E47958DCC7803 /* Outfit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE6344533C324C99BEEF67AE /* Outfit-Regular.ttf */; };
 		EB9C3945A7074A6AA736A908 /* Urbanist-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41A8A9570CA446C2908BDED8 /* Urbanist-Black.ttf */; };
+		AB5155345BD34FA0A14707FA /* Tajawal-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4857756B2AC94D0BB3C5ADD5 /* Tajawal-Bold.ttf */; };
+		732E4329620F4E0DBD9D35F1 /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B61E96E07BEF4895A6C96520 /* Tajawal-Light.ttf */; };
+		84F1511E6ACF49A3B6B97387 /* Tajawal-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 045EF737AB3846EEBC6CDC0D /* Tajawal-Medium.ttf */; };
+		844CA5245C6040259FB64EA8 /* Tajawal-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A9973DD5604FD0BCC4A503 /* Tajawal-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,10 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-MyDoctor-MyDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDoctor-MyDoctorTests.release.xcconfig"; path = "Target Support Files/Pods-MyDoctor-MyDoctorTests/Pods-MyDoctor-MyDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE6344533C324C99BEEF67AE /* Outfit-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Regular.ttf"; path = "../src/assets/fonts/Outfit-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		4857756B2AC94D0BB3C5ADD5 /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; name = "Tajawal-Bold.ttf"; path = "../src/assets/fonts/Tajawal-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B61E96E07BEF4895A6C96520 /* Tajawal-Light.ttf */ = {isa = PBXFileReference; name = "Tajawal-Light.ttf"; path = "../src/assets/fonts/Tajawal-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		045EF737AB3846EEBC6CDC0D /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; name = "Tajawal-Medium.ttf"; path = "../src/assets/fonts/Tajawal-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		73A9973DD5604FD0BCC4A503 /* Tajawal-Regular.ttf */ = {isa = PBXFileReference; name = "Tajawal-Regular.ttf"; path = "../src/assets/fonts/Tajawal-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +150,10 @@
 				0717E7871B574055BC70DA95 /* Urbanist-Medium.ttf */,
 				2169E54F2E4541F68F231B30 /* Urbanist-Regular.ttf */,
 				055B8C1F14B94BBCB60DEC0A /* Urbanist-SemiBold.ttf */,
+				4857756B2AC94D0BB3C5ADD5 /* Tajawal-Bold.ttf */,
+				B61E96E07BEF4895A6C96520 /* Tajawal-Light.ttf */,
+				045EF737AB3846EEBC6CDC0D /* Tajawal-Medium.ttf */,
+				73A9973DD5604FD0BCC4A503 /* Tajawal-Regular.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -297,6 +309,10 @@
 				4969A720846340B49E5A255E /* Urbanist-Medium.ttf in Resources */,
 				70DA42D5C62348A9A8C3E4F8 /* Urbanist-Regular.ttf in Resources */,
 				77851D1DB2DC4428BCD9F5E6 /* Urbanist-SemiBold.ttf in Resources */,
+				AB5155345BD34FA0A14707FA /* Tajawal-Bold.ttf in Resources */,
+				732E4329620F4E0DBD9D35F1 /* Tajawal-Light.ttf in Resources */,
+				84F1511E6ACF49A3B6B97387 /* Tajawal-Medium.ttf in Resources */,
+				844CA5245C6040259FB64EA8 /* Tajawal-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

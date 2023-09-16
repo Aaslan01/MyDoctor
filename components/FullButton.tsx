@@ -24,9 +24,10 @@ const FullButton: React.FC<Props> = (props: Props) => {
         {
           // width: wp(84),
           // height:2,
-          paddingVertical: hp(1.2),
+          // paddingVertical: hp(1.2),
           // alignSelf: 'center',
           alignItems: 'center',
+          justifyContent: 'center',
           backgroundColor: props.disable ? '#BBBBBB' : '#5390ED',
           borderRadius: 8,
           marginTop: hp(2),
@@ -39,7 +40,7 @@ const FullButton: React.FC<Props> = (props: Props) => {
         <Text
           style={[
             StyleGuide.colorWhite,
-            {fontSize: 16, fontFamily: 'Poppins-SemiBold'},
+            {fontSize: 12, fontFamily: 'Urbanist-SemiBold'},
           ]}>
           {props.title}
         </Text>

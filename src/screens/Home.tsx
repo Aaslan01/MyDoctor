@@ -5,34 +5,41 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import StyleGuide from '../../constants/StyleGuide';
-import {
-  heightPercentageToDP as hp,
-  widthPercentageToDP as wp,
-} from 'react-native-responsive-screen';
 import Header from '../../components/Header';
 import FullButton from '../../components/FullButton';
 import CircleTickBox from '../components/CircleTickBox';
 import PlusSVG from '../assets/svgs/PlusSVG';
 import DoctorContainer from '../../components/DoctorContainer';
+import {RtlContext} from '../context/RtlContext';
 
 const Home = (props: any) => {
-  const [isEdit, setIsEdit] = useState<boolean>(false);
+  // @ts-ignore
+  const {rtl, toggleFalse, toggleTrue} = useContext(RtlContext);
   return (
-    <SafeAreaView style={[StyleGuide.fullBackground,{direction:'rtl'}]}>
+    <SafeAreaView style={[StyleGuide.fullBackground, {direction: 'rtl'}]}>
       {/* <Header title={'Find Doctors'} /> */}
-      <Header title={'الأطباء'} />
+      <Header title={rtl ? 'الأطباء' : 'Find Doctors'} />
+      <FullButton
+        buttonStyle={{height: 40, marginHorizontal: 20}}
+        onPress={() => (rtl ? toggleFalse() : toggleTrue())}
+        title={
+          rtl
+            ? 'Click for the English Version'
+            : 'انقر للحصول على النسخة العربية'
+        }
+      />
       <ScrollView
-      showsVerticalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{marginHorizontal: 16}}
         style={{
-          
-          flex:1,
+          flex: 1,
         }}>
-        <DoctorContainer />
-        <DoctorContainer />
-        <DoctorContainer />
-        <DoctorContainer />
+        <DoctorContainer rtl={rtl} />
+        <DoctorContainer rtl={rtl} />
+        <DoctorContainer rtl={rtl} />
+        <DoctorContainer rtl={rtl} />
       </ScrollView>
     </SafeAreaView>
   );

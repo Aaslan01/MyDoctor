@@ -8,7 +8,7 @@ import PersonBeat from '../src/assets/svgs/PersonBeat';
 import LocationB from '../src/assets/svgs/LocationB';
 import BoxBack from '../src/assets/svgs/BoxBack';
 
-const DoctorAmenities = () => {
+const DoctorAmenities = ({rtl}: any) => {
   function SmallContainer(
     header: string | undefined,
     text: string | undefined,
@@ -40,8 +40,8 @@ const DoctorAmenities = () => {
               StyleGuide.regular12,
               {
                 fontWeight: '700',
-                textAlign: 'left'
               },
+              rtl && {fontFamily: 'Tajawal-Regular', textAlign: 'left',}
             ]}>
             {header}
           </Text>
@@ -50,8 +50,8 @@ const DoctorAmenities = () => {
               StyleGuide.regular12,
               {
                 color: StyleGuide.colors.text,
-                textAlign: 'left'
               },
+              rtl && {fontFamily: 'Tajawal-Regular', textAlign: 'left',}
             ]}>
             {text}
           </Text>
@@ -77,25 +77,31 @@ const DoctorAmenities = () => {
               StyleGuide.regular12,
               {
                 fontWeight: '700',
-                textAlign: 'left'
               },
+              rtl && {fontFamily: 'Tajawal-Regular', textAlign: 'left',},
             ]}>
-            مكان العمل
+            {rtl ? 'مكان العمل' : 'WorkPlace'}
           </Text>
           <Text
             style={[
-              StyleGuide.regular12,
+              StyleGuide.regular10,
               {
                 color: StyleGuide.colors.text,
-                textAlign: 'left'
               },
+              rtl && {fontFamily: 'Tajawal-Regular', textAlign: 'left', fontWeight: '400',},
+
             ]}>
-            مستشفى اليرموك بغداد, العراق
+            {rtl
+              ? 'مستشفى اليرموك بغداد, العراق'
+              : 'Yarmuk Hospital Baghdad iraq'}
           </Text>
         </View>
       </View>
-      {SmallContainer('المنطقة', 'المنصور بغداد')}
-      {SmallContainer('المرضى', '20')}
+      {SmallContainer(
+        rtl ? 'المنطقة' : 'Location',
+        rtl ? 'المنصور بغداد' : 'Al Mansour Baghdad, Iraq',
+      )}
+      {SmallContainer(rtl ? 'المرضى' : 'Patients', '20')}
     </View>
   );
 };
