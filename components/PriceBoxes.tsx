@@ -1,11 +1,13 @@
 import {View, Text} from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import StyleGuide from '../constants/StyleGuide';
-import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import {RtlContext} from '../src/context/RtlContext';
 
 const PriceBoxes = () => {
+  // @ts-ignore
+  const {rtl} = useContext(RtlContext);
+
   function PriceBox(heading: string, price: string) {
-    
     return (
       <View
         style={[
@@ -22,15 +24,14 @@ const PriceBoxes = () => {
             marginRight: 10,
           },
         ]}>
-        <Text style={[StyleGuide.regular12,
-        ]}>{heading}</Text>
+        <Text style={[StyleGuide.regular12]}>{heading}</Text>
         <Text
           style={{
-            fontFamily: 'Urbanist-Regular',
+            fontFamily: rtl ? 'Tajawal-Bold' : 'Urbanist-Bold',
             fontSize: 20,
-            fontWeight: '700',
+            // fontWeight: '700',
             marginTop: 2,
-            color: '#2A2A2A'
+            color: '#2A2A2A',
           }}>
           {price}{' '}
           <Text
@@ -46,8 +47,8 @@ const PriceBoxes = () => {
 
   return (
     <View style={[StyleGuide.fdr, StyleGuide.mt20]}>
-      {PriceBox('استشارات أونلاين', '150,000')}
-      {PriceBox('استشارات منزلية', '240,000')}
+      {PriceBox(rtl ? 'استشارات أونلاين' : 'Online Consultation', '150,000')}
+      {PriceBox(rtl ? 'استشارات منزلية' : 'Home Consultation', '240,000')}
     </View>
   );
 };

@@ -5,7 +5,7 @@ import ColorStatus from '../src/assets/svgs/ColorStatus';
 
 interface DoctorInformationProps {}
 
-const DoctorInformation = () => {
+const DoctorInformation = ({rtl}: any) => {
   return (
     <View style={[StyleGuide.fdr]}>
       <View
@@ -30,36 +30,44 @@ const DoctorInformation = () => {
           <ColorStatus />
         </View>
       </View>
-      <View style={[StyleGuide.ml10, StyleGuide.mt2]}>
+      <View style={[StyleGuide.ml10]}>
         <Text
           style={[
             StyleGuide.semiBold16,
-            StyleGuide.mt2,
-            {color: StyleGuide.colors.text, fontWeight: '600'},
+            // StyleGuide.mt2,
+            {
+              color: StyleGuide.colors.text,
+              fontWeight: '600',
+            },
+            rtl && {fontFamily: 'Tajawal-Regular'},
           ]}>
-          {/* Dr. Yaser Qurban */}د. ياسر يعقوب
+          {rtl ? 'د. ياسر يعقوب' : 'Dr. Yaser Qurban'}
         </Text>
         <Text
           style={[
             StyleGuide.semiBold14,
-            StyleGuide.mt2,
-            {fontWeight: '600', textAlign: 'left'},
+            // StyleGuide.mt2,
+            {
+              fontWeight: '600',
+              textAlign: 'left',
+            },
+            rtl && {fontFamily: 'Tajawal-Regular'},
           ]}>
-          طب عام
+          {rtl ? 'طب عام' : 'General Medicine'}
         </Text>
         <Text
           style={[
             StyleGuide.semiBold12,
-            StyleGuide.mt2,
+            // StyleGuide.mt2,
             {
               color: StyleGuide.colors.lightText,
               fontWeight: '500',
-              textAlign: 'left',
             },
+            rtl && {fontFamily: 'Tajawal-Regular', textAlign: 'left',},
           ]}>
-          3 تقييمات
+          {rtl ? '3 تقييمات' : '3 Reviews'}
         </Text>
-        <View style={[StyleGuide.fdrac, StyleGuide.mt2]}>
+        <View style={[StyleGuide.fdrac]}>
           <Image
             style={{resizeMode: 'contain'}}
             source={require('../src/assets/images/iraq.png')}
@@ -67,10 +75,13 @@ const DoctorInformation = () => {
           <Text
             style={[
               StyleGuide.semiBold12,
-              {color: StyleGuide.colors.lightText},
+              {
+                color: StyleGuide.colors.lightText,
+              },
+              rtl && {fontFamily: 'Tajawal-Regular'},
             ]}>
             {' '}
-            العراق
+            {rtl ? 'العراق' : 'Iraq'}
           </Text>
         </View>
       </View>

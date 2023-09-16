@@ -15,16 +15,16 @@ import {
 import Header from '../../components/Header';
 import { RtlContext } from '../context/RtlContext';
 
-const SearchScreen = (props: any) => {
+const Consultations = (props: any) => {
   // @ts-ignore
   const {rtl} = useContext(RtlContext);
   
   return (
     <SafeAreaView style={[StyleGuide.fullBackground]}>
-      <Header title={rtl ?'بحث' : 'Search Screen'} />
-      <Text style={[StyleGuide.center, StyleGuide.m20]}>SearchScreen</Text>
+      <Header title={rtl ? 'الاستشارات' : 'Consultations'} />
+      <Text style={[StyleGuide.center, StyleGuide.m20]}>Consultations</Text>
     </SafeAreaView>
   );
 };
 
-export default SearchScreen;
+export default Consultations;

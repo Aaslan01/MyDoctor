@@ -7,8 +7,8 @@ import PriceBoxes from './PriceBoxes';
 import FullButton from './FullButton';
 import {useNavigation} from '@react-navigation/native';
 
-const DoctorContainer = (props: any) => {
-  const navigation = useNavigation()
+const DoctorContainer = ({rtl}: any) => {
+  const navigation = useNavigation();
   return (
     <TouchableOpacity
       style={[
@@ -20,12 +20,13 @@ const DoctorContainer = (props: any) => {
           width: '100%',
         },
       ]}>
-      <DoctorInformation />
-      <DoctorAmenities />
-      <PriceBoxes />
+      <DoctorInformation rtl={rtl}/>
+      <DoctorAmenities rtl={rtl}/>
+      <PriceBoxes/>
       <FullButton
         // title={'Book Now'}
-        title={'احجز الأن'}
+        buttonStyle={{height: 40}}
+        title={rtl? 'احجز الأن' : 'Book Now'}
         onPress={() => navigation?.navigate('DoctorDetails')}
       />
     </TouchableOpacity>

@@ -1,21 +1,25 @@
-import {View, Text, Platform, Image} from 'react-native';
-import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {View, Text, Platform} from 'react-native';
+import React, {useContext} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import SearchScreen from '../screens/SearchScreen';
-import Connections from '../screens/Connections';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import StyleGuide from '../../constants/StyleGuide';
 import HomeSVG from '../assets/svgs/HomeSVG';
-import ConnectionSVG from '../assets/svgs/ConnectionSVG';
-import AddCircleSVG from '../assets/svgs/AddCircleSVG';
 import SearchSVG from '../assets/svgs/SearchSVG';
-import Paper from '../assets/svgs/Paper';
-import NotificationSVG from '../assets/svgs/NotificationSVG';
 const Tab = createBottomTabNavigator();
+import {RtlContext} from '../context/RtlContext';
+import Notifications from '../screens/Notifications';
+import NotificationSVG from '../assets/svgs/NotificationSVG';
+import More from '../screens/More';
+import MoreSVG from '../assets/svgs/MoreSVG';
+import Consultations from '../screens/Consultations';
+import Paper from '../assets/svgs/Paper';
 
 const BottomTab = () => {
+  // @ts-ignore
+  const {rtl, toggleFalse, toggleTrue} = useContext(RtlContext);
+
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -49,7 +53,7 @@ const BottomTab = () => {
                       color: '#5492FD',
                     },
                   ]}>
-                  Home
+                  {rtl ? 'الرئيسية' : 'Home'}
                 </Text>
               </View>
             );
@@ -73,7 +77,79 @@ const BottomTab = () => {
                       color: '#5492FD',
                     },
                   ]}>
-                  Search
+                  {rtl ? 'بحث' : 'Search'}
+                </Text>
+              </View>
+            );
+          },
+        })}
+      />
+      <Tab.Screen
+        name="Consultations"
+        component={Consultations}
+        options={() => ({
+          tabBarIcon: ({focused, size}) => {
+            return (
+              <View style={StyleGuide.center}>
+                {focused ? <Paper /> : <Paper fill={'#B8BEC6'} />}
+                <Text
+                  style={[
+                    StyleGuide.bottomNavText,
+                    focused && {
+                      fontWeight: '600',
+                      fontSize: 12,
+                      color: '#5492FD',
+                    },
+                  ]}>
+                  {rtl ? 'بحث' : 'Search'}
+                </Text>
+              </View>
+            );
+          },
+        })}
+      />
+      <Tab.Screen
+        name="Notifications"
+        component={Notifications}
+        options={() => ({
+          tabBarIcon: ({focused, size}) => {
+            return (
+              <View style={StyleGuide.center}>
+                {focused ? <NotificationSVG /> : <NotificationSVG fill={'#B8BEC6'} />}
+                <Text
+                  style={[
+                    StyleGuide.bottomNavText,
+                    focused && {
+                      fontWeight: '600',
+                      fontSize: 12,
+                      color: '#5492FD',
+                    },
+                  ]}>
+                  {rtl ? 'الاشعارات' : 'Notifications'}
+                </Text>
+              </View>
+            );
+          },
+        })}
+      />
+      <Tab.Screen
+        name="More"
+        component={More}
+        options={() => ({
+          tabBarIcon: ({focused, size}) => {
+            return (
+              <View style={StyleGuide.center}>
+                {focused ? <MoreSVG /> : <MoreSVG fill={'#B8BEC6'} />}
+                <Text
+                  style={[
+                    StyleGuide.bottomNavText,
+                    focused && {
+                      fontWeight: '600',
+                      fontSize: 12,
+                      color: '#5492FD',
+                    },
+                  ]}>
+                  {rtl ? 'المزيد' : 'More'}
                 </Text>
               </View>
             );
