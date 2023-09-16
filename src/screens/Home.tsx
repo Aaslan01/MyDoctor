@@ -13,17 +13,35 @@ import CircleTickBox from '../components/CircleTickBox';
 import PlusSVG from '../assets/svgs/PlusSVG';
 import DoctorContainer from '../../components/DoctorContainer';
 import {RtlContext} from '../context/RtlContext';
+import {I18nManager} from 'react-native';
+import RNRestart from 'react-native-restart';
 
 const Home = (props: any) => {
   // @ts-ignore
   const {rtl, toggleFalse, toggleTrue} = useContext(RtlContext);
+
+  
+  function setFlagTrue() {
+    I18nManager.allowRTL(true);
+    I18nManager.forceRTL(true);
+    RNRestart.Restart();
+  }
+  function setFlagFalse() {
+    I18nManager.allowRTL(false);
+    I18nManager.forceRTL(false);
+      RNRestart.Restart();
+    
+  }
+  // I18nManager.allowRTL(false);
+  // I18nManager.forceRTL(false);
+  //   RNRestart.Restart();
   return (
     <SafeAreaView style={[StyleGuide.fullBackground, {direction: 'rtl'}]}>
       {/* <Header title={'Find Doctors'} /> */}
       <Header title={rtl ? 'الأطباء' : 'Find Doctors'} />
       <FullButton
         buttonStyle={{height: 40, marginHorizontal: 20}}
-        onPress={() => (rtl ? toggleFalse() : toggleTrue())}
+        onPress={() => (rtl ? setFlagFalse() : setFlagTrue())}
         title={
           rtl
             ? 'Click for the English Version'

@@ -5,12 +5,13 @@ export const RtlProvider = ({ children }) => {
   const [rtl, setRtl] = useState(false);
 
   const toggleTrue = () => {
-    console.log("Hi Ali");
-    
+    console.log("Hi Ali ---true---");    
     setRtl(true);
   };
   const toggleFalse = () => {
     setRtl(false);
+    console.log("Hi Ali ---false---");
+
   };
 
   return (
