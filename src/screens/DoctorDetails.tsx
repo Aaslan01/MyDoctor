@@ -355,7 +355,7 @@ const DoctorDetails = () => {
             {color: '#6D6D6D', textAlign: 'left'},
             rtl && {fontFamily: 'Tajawal-Regular'},
           ]}>
-          يناير 22, 2020{' '}
+          {rtl ? 'يناير 22, 2020' : 'Jan 22, 2020'}
         </Text>
       </View>
     );
@@ -384,7 +384,7 @@ const DoctorDetails = () => {
               position: 'absolute',
               left: 16,
               top:
-                Platform.OS == 'android' ? StatusBar.currentHeight - 30 : '20%',
+                Platform.OS == 'android' ? StatusBar.currentHeight - 20 : '20%',
             }}
             onPress={() => navigation.goBack()}>
             {rtl ? <RightArrow /> : <LeftArrow />}
@@ -405,7 +405,7 @@ const DoctorDetails = () => {
                 right: 20,
                 top:
                   Platform.OS == 'android'
-                    ? StatusBar.currentHeight - 30
+                    ? StatusBar.currentHeight - 20
                     : '20%',
               },
             ]}>
@@ -485,7 +485,7 @@ const DoctorDetails = () => {
           {/* Biography */}
           {BioInfo()}
           {DoctorsNewAmenities()}
-          <PriceBoxes/>
+          <PriceBoxes />
           {/* Availibilty Timings */}
           <Text style={[styles.headings, rtl && {textAlign: 'left'}]}>
             {rtl ? 'المواعيد المتاحة' : 'Availibilty Timings'}
@@ -535,17 +535,17 @@ const styles = StyleSheet.create({
     color: '#2A2A2A',
     marginTop: 20,
   },
-  // shadow: {
-  //   backgroundColor: 'white', // Add your background color here
-  //   padding: 16, // Add your desired padding
-  //   shadowColor: 'rgba(134, 134, 153, 0.10)',
-  //   shadowOffset: {
-  //     width: -4,
-  //     height: -4,
-  //   },
-  //   shadowOpacity: 1,
-  //   shadowRadius: 32,
-  // },
+  shadow: {
+    backgroundColor: 'white', // Add your background color here
+    padding: 16, // Add your desired padding
+    shadowColor: 'rgba(134, 134, 153, 0.10)',
+    shadowOffset: {
+      width: -4,
+      height: -4,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 32,
+  },
 });
 
 export default DoctorDetails;

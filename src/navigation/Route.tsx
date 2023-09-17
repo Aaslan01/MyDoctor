@@ -5,20 +5,23 @@
  * @format
  */
 
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {I18nManager, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import BottomTab from '../navigation/BottomTab';
 import SearchScreen from '../screens/SearchScreen';
 import DoctorDetails from '../screens/DoctorDetails';
-import { RtlContext } from '../context/RtlContext';
+import {RtlContext} from '../context/RtlContext';
 const Stack = createNativeStackNavigator();
 
 function Route() {
   // @ts-ignore
   const {toggleFalse, toggleTrue} = useContext(RtlContext);
-  I18nManager?.isRTL ? toggleTrue() : toggleFalse();
+
+  useEffect(() => {
+    I18nManager?.isRTL ? toggleTrue() : toggleFalse();
+  }, [I18nManager?.isRTL]);
 
   return (
     <NavigationContainer>

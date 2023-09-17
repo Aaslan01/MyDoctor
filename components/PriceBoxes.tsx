@@ -13,7 +13,7 @@ const PriceBoxes = () => {
         style={[
           StyleGuide.center,
           StyleGuide.pv10,
-          StyleGuide.ph20,
+          // StyleGuide.ph20,
           StyleGuide.colorBackground,
           // StyleGuide.
           {
@@ -21,7 +21,6 @@ const PriceBoxes = () => {
             borderWidth: 1,
             borderColor: '#EEE',
             width: '48%',
-            marginRight: 10,
           },
         ]}>
         <Text style={[StyleGuide.regular12]}>{heading}</Text>
@@ -46,7 +45,7 @@ const PriceBoxes = () => {
   }
 
   return (
-    <View style={[StyleGuide.fdr, StyleGuide.mt20]}>
+    <View style={[StyleGuide.fdrjsb, StyleGuide.mt20, ]}>
       {PriceBox(rtl ? 'استشارات أونلاين' : 'Online Consultation', '150,000')}
       {PriceBox(rtl ? 'استشارات منزلية' : 'Home Consultation', '240,000')}
     </View>

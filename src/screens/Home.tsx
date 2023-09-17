@@ -20,17 +20,19 @@ const Home = (props: any) => {
   // @ts-ignore
   const {rtl, toggleFalse, toggleTrue} = useContext(RtlContext);
 
-  
   function setFlagTrue() {
     I18nManager.allowRTL(true);
     I18nManager.forceRTL(true);
-    RNRestart.Restart();
+    setTimeout(() => {
+      RNRestart.Restart();
+    }, 200);
   }
   function setFlagFalse() {
     I18nManager.allowRTL(false);
     I18nManager.forceRTL(false);
+    setTimeout(() => {
       RNRestart.Restart();
-    
+    }, 200);
   }
   // I18nManager.allowRTL(false);
   // I18nManager.forceRTL(false);
